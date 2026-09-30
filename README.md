@@ -2,6 +2,8 @@
 
 **Where did my tokens go? · 我的 token 去哪儿了？**
 
+[![CI](https://github.com/Chengjun023/token-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/Chengjun023/token-inspector/actions/workflows/ci.yml)
+
 ![Token Inspector banner](assets/hero.svg)
 
 [完整中文说明](README.zh-CN.md) · [Architecture](docs/architecture.md) · [Engineering notes](docs/engineering.md) · [Roadmap](docs/roadmap.md)
