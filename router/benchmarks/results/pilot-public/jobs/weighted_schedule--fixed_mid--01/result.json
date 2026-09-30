@@ -1,0 +1,50 @@
+{
+  "artifact_hashes": {
+    "solution.py": "3d1c2ffb43ed2f4561fd816c513f9351f9b470b1a1ddb59e7261d80572a74b93"
+  },
+  "completed_at": "2026-09-30T14:45:30.432175+00:00",
+  "cost": {
+    "known": true,
+    "price_snapshot_hash": "b7825fc81533c6ba2a41f692463a4b764b6e293183a6f72cad3cf0274bcaf422",
+    "reason": null,
+    "usd": "0.04819"
+  },
+  "elapsed_seconds": 74.708405,
+  "error": null,
+  "event_types": [
+    "thread.started",
+    "turn.started",
+    "item.completed",
+    "turn.completed"
+  ],
+  "final_pass": true,
+  "first_pass": true,
+  "grade": {
+    "error": null,
+    "grader_version": "grader-v1.0.0",
+    "passed": true
+  },
+  "invalid_event_lines": 0,
+  "job_id": "weighted_schedule--fixed_mid--01",
+  "manifest_hash": "7189b64127eadc2c4e90f9ed2993efc44f0cc400782918baee409287ae67ea15",
+  "route": {
+    "model": "gpt-6.1-sol",
+    "reason": "fixed baseline",
+    "reasoning_effort": "high"
+  },
+  "simulation": false,
+  "status": "completed",
+  "strategy": "fixed_mid",
+  "task_id": "weighted_schedule",
+  "unexpected_tool_types": [],
+  "usage": {
+    "cached_input_tokens": 0,
+    "completion_count": 1,
+    "input_includes_cached": true,
+    "input_tokens": 17175,
+    "known": true,
+    "output_includes_reasoning": true,
+    "output_tokens": 1384,
+    "reasoning_tokens": 744
+  }
+}

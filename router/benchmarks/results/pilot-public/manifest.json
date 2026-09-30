@@ -1,0 +1,2582 @@
+{
+  "benchmark_version": "router-mini-v1.0.0",
+  "catalog": {
+    "host_snapshot": {
+      "hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+      "models": {
+        "gpt-5.6-sol": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "gpt-5.6-terra": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "gpt-6-astra": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "gpt-6-luna": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "gpt-6-sol": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "gpt-6.1-sol": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ]
+      },
+      "observed_at": 1790778800.0269902,
+      "source": "native-tool-baseline+evidence-admitted-host"
+    },
+    "metadata": {
+      "fallback": false,
+      "hash": "sha256:c8d6ce058e692e892fa7bcd08baeaf481b8c98bbb2fe6ba347ebdb036b0fb966",
+      "observed_at": 1790778800.026685,
+      "removed_since_previous": [],
+      "source": "codex debug models",
+      "status": "fresh"
+    },
+    "models": {
+      "gpt-5.5": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "gpt-5.6-luna": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "gpt-5.6-sol": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ],
+      "gpt-5.6-terra": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ],
+      "gpt-6-astra": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ],
+      "gpt-6-luna": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "gpt-6-sol": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ],
+      "gpt-6.1-sol": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ],
+      "gpt-reserve": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    }
+  },
+  "catalog_hash": "6b05e1751ec665e8cd06289cb3824e30e53a944b16991417ea0c24ed59604ca6",
+  "code_hashes": {
+    "benchmarks/__init__.py": "cb3582a0cc797e0ff61d7e5a87b4ec36a274e59e97075c62a00900042a56fd3b",
+    "benchmarks/benchmark.py": "e355f060bbecb64733bfe490f001b661d0c4880e6aaac39c98a8e757dd225519",
+    "benchmarks/demo_answers.py": "24015048a27c871e2a45b5c01f467097a87c965b94d80186debf380b040db1c5",
+    "benchmarks/executors.py": "caf95bd20fe2f68bd93de48fc6a3cee76a7e51f01ca603eb7588779bce2845de",
+    "benchmarks/fixtures/v1/cache.py": "620e4b5b9af4b0cdfb02c0ffe420b40b63f3db42e02fbd24e4b04e6e634abb18",
+    "benchmarks/fixtures/v1/config.ini": "7b0e96b57fd27e7ca27332d2e5da1466332a2afd20ae8dd651bdc57f91338bff",
+    "benchmarks/fixtures/v1/invoices.jsonl": "86b546ff7296ca0d9230a6b2028a3b6ee638b0ca0fe778a2f7ba5a7815d609af",
+    "benchmarks/grader_worker.py": "1bc520afb20fb3f74a4741e5fe39b18875abd6243b3bc6e2bb4b303ad95b6c3c",
+    "benchmarks/graders.py": "172e81158afefbdd69127515bd252747ca46b106c9de2d37eb448bda700526ff",
+    "benchmarks/tasks.py": "1953ff4d7d4a5966c8742ab114b143e7ba7cb5d3776770916656fb787eaa07ff",
+    "data/models.bundled.json": "998a5f7167ddb71dba0a470b16b72dfaa0241c815b086566612553c873401211",
+    "scripts/difficulty.py": "e9e8d0fa66ac7c75981df8257514dda6380aa54e903d853aa9c6804ec3d1d8ee",
+    "scripts/feedback.py": "4f61845585f96155cd2933ce2a794e62b1ada62ad899757ddcac1c3b4ea7b90a",
+    "scripts/model_registry.py": "ccc4c1040f2aef0a29809228e3eb66959a2fa6b6bb8b40dd90e82622f58ea266",
+    "scripts/policy.py": "32178fd3c977e1b873b535bcb7c8086c959b65782a42584a43630719d254109d",
+    "scripts/router.py": "fab3e963ae99c48c7555d51c0643666ecdf6f68d886802501ec61e02b773cd76"
+  },
+  "comparison": "one-shot deterministic selector pilot; no multi-agent or failure escalation",
+  "jobs": [
+    {
+      "id": "circular_boundaries--fixed_strong--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/circular_boundaries@1.0.0\n\nImplement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "a661e32f205b33d41b4ccf1da4168e4bfe5295fb4caa9f86ccf2ddb5dec15679",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6-astra",
+        "reason": "fixed baseline",
+        "reasoning_effort": "xhigh"
+      },
+      "strategy": "fixed_strong",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "hard",
+          "score": 8.6,
+          "task_type": "reason"
+        },
+        "id": "circular_boundaries",
+        "instruction": "Implement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Circular interval boundary rules",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "exact_edit--fixed_mid--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/exact_edit@1.0.0\n\nReturn the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: config.ini\n\nFixture config.ini:\n# Synthetic service configuration. Preserve comments and spacing.\n[service]\nname = demo\nretry_count = 3  # transient errors\ntimeout = 12\n\n[archive]\nretry_count = 3\nname = untouched\n",
+      "prompt_hash": "b4db523ad2dd8ccee36efbf1c7b9d96ce4ec4a3377e146c1a820df9f045240ee",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6.1-sol",
+        "reason": "fixed baseline",
+        "reasoning_effort": "high"
+      },
+      "strategy": "fixed_mid",
+      "task": {
+        "fixture_contents": {
+          "config.ini": "# Synthetic service configuration. Preserve comments and spacing.\n[service]\nname = demo\nretry_count = 3  # transient errors\ntimeout = 12\n\n[archive]\nretry_count = 3\nname = untouched\n"
+        },
+        "fixtures": [
+          "config.ini"
+        ],
+        "human_annotation": {
+          "complexity": "simple",
+          "score": 2.2,
+          "task_type": "edit"
+        },
+        "id": "exact_edit",
+        "instruction": "Return the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied.",
+        "outputs": [
+          "config.ini"
+        ],
+        "title": "Section-scoped exact edit",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "bug_fix--fixed_strong--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/bug_fix@1.0.0\n\nRepair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: cache.py\n\nFixture cache.py:\nclass Cache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.data = {}\n\n    def put(self, key, value, now, ttl):\n        if key not in self.data and len(self.data) >= self.capacity:\n            self.data.pop(next(iter(self.data)))\n        self.data[key] = (value, now + ttl)\n\n    def get(self, key, now):\n        value, expiry = self.data[key]\n        if now > expiry:\n            del self.data[key]\n            raise KeyError(key)\n        return value\n",
+      "prompt_hash": "cbe8b2a95d886efe1b48766d56cd48188e3c43213f6e0d12e1fb87b82e624b5a",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6-astra",
+        "reason": "fixed baseline",
+        "reasoning_effort": "xhigh"
+      },
+      "strategy": "fixed_strong",
+      "task": {
+        "fixture_contents": {
+          "cache.py": "class Cache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.data = {}\n\n    def put(self, key, value, now, ttl):\n        if key not in self.data and len(self.data) >= self.capacity:\n            self.data.pop(next(iter(self.data)))\n        self.data[key] = (value, now + ttl)\n\n    def get(self, key, now):\n        value, expiry = self.data[key]\n        if now > expiry:\n            del self.data[key]\n            raise KeyError(key)\n        return value\n"
+        },
+        "fixtures": [
+          "cache.py"
+        ],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 6.4,
+          "task_type": "debug"
+        },
+        "id": "bug_fix",
+        "instruction": "Repair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "cache.py"
+        ],
+        "title": "Expiry-aware LRU repair",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "structured_extract--fixed_strong--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/structured_extract@1.0.0\n\nFor each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: summary.json\n\nFixture invoices.jsonl:\n{\"id\":\"A\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"12.40\",\"currency\":\"USD\"}\n{\"id\":\"B\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":2,\"status\":\"paid\",\"customer\":\"Maple\",\"amount\":\"9.50\",\"currency\":\"USD\"}\n{\"id\":\"A\",\"revision\":2,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"10.10\",\"currency\":\"USD\"}\n{\"id\":\"D\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"2.20\",\"currency\":\"EUR\"}\n{\"id\":\"B\",\"revision\":3,\"status\":\"cancelled\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"0.90\",\"currency\":\"USD\"}\n{\"id\":\"F\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"1.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"8.00\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":2,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"1.20\",\"currency\":\"USD\"}\n",
+      "prompt_hash": "0577f5a2b7ee8c27b6670218cc70de9b245af3c8d3688c0478a9f0ea9e756489",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6-astra",
+        "reason": "fixed baseline",
+        "reasoning_effort": "xhigh"
+      },
+      "strategy": "fixed_strong",
+      "task": {
+        "fixture_contents": {
+          "invoices.jsonl": "{\"id\":\"A\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"12.40\",\"currency\":\"USD\"}\n{\"id\":\"B\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":2,\"status\":\"paid\",\"customer\":\"Maple\",\"amount\":\"9.50\",\"currency\":\"USD\"}\n{\"id\":\"A\",\"revision\":2,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"10.10\",\"currency\":\"USD\"}\n{\"id\":\"D\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"2.20\",\"currency\":\"EUR\"}\n{\"id\":\"B\",\"revision\":3,\"status\":\"cancelled\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"0.90\",\"currency\":\"USD\"}\n{\"id\":\"F\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"1.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"8.00\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":2,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"1.20\",\"currency\":\"USD\"}\n"
+        },
+        "fixtures": [
+          "invoices.jsonl"
+        ],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 3.6,
+          "task_type": "extract"
+        },
+        "id": "structured_extract",
+        "instruction": "For each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding.",
+        "outputs": [
+          "summary.json"
+        ],
+        "title": "Revision-aware invoice extraction",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "exact_edit--router--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/exact_edit@1.0.0\n\nReturn the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: config.ini\n\nFixture config.ini:\n# Synthetic service configuration. Preserve comments and spacing.\n[service]\nname = demo\nretry_count = 3  # transient errors\ntimeout = 12\n\n[archive]\nretry_count = 3\nname = untouched\n",
+      "prompt_hash": "b4db523ad2dd8ccee36efbf1c7b9d96ce4ec4a3377e146c1a820df9f045240ee",
+      "repetition": 1,
+      "route": {
+        "assessment": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "edit"
+            ],
+            "constraints": [
+              "preserve_non_target_content"
+            ],
+            "scope": "local"
+          },
+          "reasons": [
+            "task_type=edit"
+          ],
+          "score": 3.5,
+          "source": "heuristic",
+          "task_type": "edit"
+        },
+        "assessment_input": {
+          "complexity": "normal",
+          "risk": "low",
+          "task_type": "general",
+          "text": "Return the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied."
+        },
+        "difficulty": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "edit"
+            ],
+            "constraints": [
+              "preserve_non_target_content"
+            ],
+            "scope": "local"
+          },
+          "reasons": [
+            "task_type=edit"
+          ],
+          "score": 3.5,
+          "source": "heuristic",
+          "task_type": "edit"
+        },
+        "feedback_scope": "benchmark",
+        "history": {},
+        "model": "gpt-6-luna",
+        "phase": "act",
+        "policy": {
+          "calibration": "uncalibrated_prior_with_local_counts",
+          "candidates": [
+            {
+              "cost_index": 0.6,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-luna",
+              "prior_calibrated": false,
+              "rank_score": 100.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 14,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-terra",
+              "prior_calibrated": false,
+              "rank_score": 94.5488,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6.1-sol",
+              "prior_calibrated": false,
+              "rank_score": 89.6162,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-sol",
+              "prior_calibrated": false,
+              "rank_score": 84.6162,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 24,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-sol",
+              "prior_calibrated": false,
+              "rank_score": 79.2121,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 60,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-astra",
+              "prior_calibrated": false,
+              "rank_score": 73.0,
+              "reasoning_effort": "xhigh",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            }
+          ],
+          "constraints": {},
+          "excluded": [],
+          "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+          "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+          "profile": "balanced",
+          "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+          "version": "1.0",
+          "workload": "write"
+        },
+        "profile": "balanced",
+        "reason": "act 阶段；edit 原始难度 3.5/10，选模分数 3.5/10，选择 gpt-6-luna medium",
+        "reasoning_effort": "medium",
+        "requested_phase": "act",
+        "requires_strong_review": false,
+        "selection_score": 3.5
+      },
+      "strategy": "router",
+      "task": {
+        "fixture_contents": {
+          "config.ini": "# Synthetic service configuration. Preserve comments and spacing.\n[service]\nname = demo\nretry_count = 3  # transient errors\ntimeout = 12\n\n[archive]\nretry_count = 3\nname = untouched\n"
+        },
+        "fixtures": [
+          "config.ini"
+        ],
+        "human_annotation": {
+          "complexity": "simple",
+          "score": 2.2,
+          "task_type": "edit"
+        },
+        "id": "exact_edit",
+        "instruction": "Return the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied.",
+        "outputs": [
+          "config.ini"
+        ],
+        "title": "Section-scoped exact edit",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "structured_extract--router--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/structured_extract@1.0.0\n\nFor each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: summary.json\n\nFixture invoices.jsonl:\n{\"id\":\"A\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"12.40\",\"currency\":\"USD\"}\n{\"id\":\"B\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":2,\"status\":\"paid\",\"customer\":\"Maple\",\"amount\":\"9.50\",\"currency\":\"USD\"}\n{\"id\":\"A\",\"revision\":2,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"10.10\",\"currency\":\"USD\"}\n{\"id\":\"D\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"2.20\",\"currency\":\"EUR\"}\n{\"id\":\"B\",\"revision\":3,\"status\":\"cancelled\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"0.90\",\"currency\":\"USD\"}\n{\"id\":\"F\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"1.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"8.00\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":2,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"1.20\",\"currency\":\"USD\"}\n",
+      "prompt_hash": "0577f5a2b7ee8c27b6670218cc70de9b245af3c8d3688c0478a9f0ea9e756489",
+      "repetition": 1,
+      "route": {
+        "assessment": {
+          "confidence": "low",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [],
+            "constraints": [],
+            "scope": "bounded"
+          },
+          "reasons": [
+            "task_type=general"
+          ],
+          "score": 4.0,
+          "source": "heuristic",
+          "task_type": "general"
+        },
+        "assessment_input": {
+          "complexity": "normal",
+          "risk": "low",
+          "task_type": "general",
+          "text": "For each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding."
+        },
+        "difficulty": {
+          "confidence": "low",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [],
+            "constraints": [],
+            "scope": "bounded"
+          },
+          "reasons": [
+            "task_type=general"
+          ],
+          "score": 4.0,
+          "source": "heuristic",
+          "task_type": "general"
+        },
+        "feedback_scope": "benchmark",
+        "history": {},
+        "model": "gpt-6-luna",
+        "phase": "act",
+        "policy": {
+          "calibration": "uncalibrated_prior_with_local_counts",
+          "candidates": [
+            {
+              "cost_index": 0.6,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-luna",
+              "prior_calibrated": false,
+              "rank_score": 100.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 14,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-terra",
+              "prior_calibrated": false,
+              "rank_score": 94.5488,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6.1-sol",
+              "prior_calibrated": false,
+              "rank_score": 89.6162,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-sol",
+              "prior_calibrated": false,
+              "rank_score": 84.6162,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 24,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-sol",
+              "prior_calibrated": false,
+              "rank_score": 79.2121,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 60,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-astra",
+              "prior_calibrated": false,
+              "rank_score": 73.0,
+              "reasoning_effort": "xhigh",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            }
+          ],
+          "constraints": {},
+          "excluded": [],
+          "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+          "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+          "profile": "balanced",
+          "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+          "version": "1.0",
+          "workload": "mixed"
+        },
+        "profile": "balanced",
+        "reason": "act 阶段；general 原始难度 4.0/10，选模分数 4.0/10，选择 gpt-6-luna medium",
+        "reasoning_effort": "medium",
+        "requested_phase": "act",
+        "requires_strong_review": false,
+        "selection_score": 4.0
+      },
+      "strategy": "router",
+      "task": {
+        "fixture_contents": {
+          "invoices.jsonl": "{\"id\":\"A\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"12.40\",\"currency\":\"USD\"}\n{\"id\":\"B\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":2,\"status\":\"paid\",\"customer\":\"Maple\",\"amount\":\"9.50\",\"currency\":\"USD\"}\n{\"id\":\"A\",\"revision\":2,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"10.10\",\"currency\":\"USD\"}\n{\"id\":\"D\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"2.20\",\"currency\":\"EUR\"}\n{\"id\":\"B\",\"revision\":3,\"status\":\"cancelled\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"0.90\",\"currency\":\"USD\"}\n{\"id\":\"F\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"1.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"8.00\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":2,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"1.20\",\"currency\":\"USD\"}\n"
+        },
+        "fixtures": [
+          "invoices.jsonl"
+        ],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 3.6,
+          "task_type": "extract"
+        },
+        "id": "structured_extract",
+        "instruction": "For each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding.",
+        "outputs": [
+          "summary.json"
+        ],
+        "title": "Revision-aware invoice extraction",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "weighted_schedule--fixed_mid--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/weighted_schedule@1.0.0\n\nImplement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "f24ecccc110526b13c2cb2a17bfea4ea38f29861ed733652c1495a94ff0e8cf6",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6.1-sol",
+        "reason": "fixed baseline",
+        "reasoning_effort": "high"
+      },
+      "strategy": "fixed_mid",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "hard",
+          "score": 7.8,
+          "task_type": "reason"
+        },
+        "id": "weighted_schedule",
+        "instruction": "Implement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Deterministic weighted scheduling",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "bug_fix--router--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/bug_fix@1.0.0\n\nRepair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: cache.py\n\nFixture cache.py:\nclass Cache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.data = {}\n\n    def put(self, key, value, now, ttl):\n        if key not in self.data and len(self.data) >= self.capacity:\n            self.data.pop(next(iter(self.data)))\n        self.data[key] = (value, now + ttl)\n\n    def get(self, key, now):\n        value, expiry = self.data[key]\n        if now > expiry:\n            del self.data[key]\n            raise KeyError(key)\n        return value\n",
+      "prompt_hash": "cbe8b2a95d886efe1b48766d56cd48188e3c43213f6e0d12e1fb87b82e624b5a",
+      "repetition": 1,
+      "route": {
+        "assessment": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "debug",
+              "edit"
+            ],
+            "constraints": [],
+            "scope": "unspecified"
+          },
+          "reasons": [
+            "task_type=debug"
+          ],
+          "score": 6.0,
+          "source": "heuristic",
+          "task_type": "debug"
+        },
+        "assessment_input": {
+          "complexity": "normal",
+          "risk": "low",
+          "task_type": "general",
+          "text": "Repair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution."
+        },
+        "difficulty": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "debug",
+              "edit"
+            ],
+            "constraints": [],
+            "scope": "unspecified"
+          },
+          "reasons": [
+            "task_type=debug"
+          ],
+          "score": 6.0,
+          "source": "heuristic",
+          "task_type": "debug"
+        },
+        "feedback_scope": "benchmark",
+        "history": {},
+        "model": "gpt-6.1-sol",
+        "phase": "act",
+        "policy": {
+          "calibration": "uncalibrated_prior_with_local_counts",
+          "candidates": [
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6.1-sol",
+              "prior_calibrated": false,
+              "rank_score": 100.0,
+              "reasoning_effort": "high",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-sol",
+              "prior_calibrated": false,
+              "rank_score": 95.0,
+              "reasoning_effort": "high",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 24,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-sol",
+              "prior_calibrated": false,
+              "rank_score": 89.5,
+              "reasoning_effort": "high",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 60,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-astra",
+              "prior_calibrated": false,
+              "rank_score": 83.0,
+              "reasoning_effort": "xhigh",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 14,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-terra",
+              "prior_calibrated": false,
+              "rank_score": 79.9167,
+              "reasoning_effort": "high",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            }
+          ],
+          "constraints": {},
+          "excluded": [],
+          "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+          "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+          "profile": "balanced",
+          "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+          "version": "1.0",
+          "workload": "code"
+        },
+        "profile": "balanced",
+        "reason": "act 阶段；debug 原始难度 6.0/10，选模分数 6.0/10，选择 gpt-6.1-sol high",
+        "reasoning_effort": "high",
+        "requested_phase": "act",
+        "requires_strong_review": false,
+        "selection_score": 6.0
+      },
+      "strategy": "router",
+      "task": {
+        "fixture_contents": {
+          "cache.py": "class Cache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.data = {}\n\n    def put(self, key, value, now, ttl):\n        if key not in self.data and len(self.data) >= self.capacity:\n            self.data.pop(next(iter(self.data)))\n        self.data[key] = (value, now + ttl)\n\n    def get(self, key, now):\n        value, expiry = self.data[key]\n        if now > expiry:\n            del self.data[key]\n            raise KeyError(key)\n        return value\n"
+        },
+        "fixtures": [
+          "cache.py"
+        ],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 6.4,
+          "task_type": "debug"
+        },
+        "id": "bug_fix",
+        "instruction": "Repair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "cache.py"
+        ],
+        "title": "Expiry-aware LRU repair",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "exact_edit--fixed_strong--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/exact_edit@1.0.0\n\nReturn the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: config.ini\n\nFixture config.ini:\n# Synthetic service configuration. Preserve comments and spacing.\n[service]\nname = demo\nretry_count = 3  # transient errors\ntimeout = 12\n\n[archive]\nretry_count = 3\nname = untouched\n",
+      "prompt_hash": "b4db523ad2dd8ccee36efbf1c7b9d96ce4ec4a3377e146c1a820df9f045240ee",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6-astra",
+        "reason": "fixed baseline",
+        "reasoning_effort": "xhigh"
+      },
+      "strategy": "fixed_strong",
+      "task": {
+        "fixture_contents": {
+          "config.ini": "# Synthetic service configuration. Preserve comments and spacing.\n[service]\nname = demo\nretry_count = 3  # transient errors\ntimeout = 12\n\n[archive]\nretry_count = 3\nname = untouched\n"
+        },
+        "fixtures": [
+          "config.ini"
+        ],
+        "human_annotation": {
+          "complexity": "simple",
+          "score": 2.2,
+          "task_type": "edit"
+        },
+        "id": "exact_edit",
+        "instruction": "Return the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied.",
+        "outputs": [
+          "config.ini"
+        ],
+        "title": "Section-scoped exact edit",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "routine_code--fixed_strong--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/routine_code@1.0.0\n\nImplement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "a35295a73c1fde3d1323db141d06bc2dbafc060a280da71ed38fced4fceea8b6",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6-astra",
+        "reason": "fixed baseline",
+        "reasoning_effort": "xhigh"
+      },
+      "strategy": "fixed_strong",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 5.1,
+          "task_type": "code"
+        },
+        "id": "routine_code",
+        "instruction": "Implement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Integer range union",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "circular_boundaries--fixed_mid--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/circular_boundaries@1.0.0\n\nImplement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "a661e32f205b33d41b4ccf1da4168e4bfe5295fb4caa9f86ccf2ddb5dec15679",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6.1-sol",
+        "reason": "fixed baseline",
+        "reasoning_effort": "high"
+      },
+      "strategy": "fixed_mid",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "hard",
+          "score": 8.6,
+          "task_type": "reason"
+        },
+        "id": "circular_boundaries",
+        "instruction": "Implement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Circular interval boundary rules",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "routine_code--router--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/routine_code@1.0.0\n\nImplement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "a35295a73c1fde3d1323db141d06bc2dbafc060a280da71ed38fced4fceea8b6",
+      "repetition": 1,
+      "route": {
+        "assessment": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "code"
+            ],
+            "constraints": [],
+            "scope": "bounded"
+          },
+          "reasons": [
+            "task_type=code"
+          ],
+          "score": 5.1,
+          "source": "heuristic",
+          "task_type": "code"
+        },
+        "assessment_input": {
+          "complexity": "normal",
+          "risk": "low",
+          "task_type": "general",
+          "text": "Implement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution."
+        },
+        "difficulty": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "code"
+            ],
+            "constraints": [],
+            "scope": "bounded"
+          },
+          "reasons": [
+            "task_type=code"
+          ],
+          "score": 5.1,
+          "source": "heuristic",
+          "task_type": "code"
+        },
+        "feedback_scope": "benchmark",
+        "history": {},
+        "model": "gpt-6.1-sol",
+        "phase": "act",
+        "policy": {
+          "calibration": "uncalibrated_prior_with_local_counts",
+          "candidates": [
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6.1-sol",
+              "prior_calibrated": false,
+              "rank_score": 100.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-sol",
+              "prior_calibrated": false,
+              "rank_score": 95.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 24,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-sol",
+              "prior_calibrated": false,
+              "rank_score": 89.5,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 60,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-astra",
+              "prior_calibrated": false,
+              "rank_score": 83.0,
+              "reasoning_effort": "xhigh",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 14,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-terra",
+              "prior_calibrated": false,
+              "rank_score": 79.9167,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            }
+          ],
+          "constraints": {},
+          "excluded": [],
+          "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+          "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+          "profile": "balanced",
+          "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+          "version": "1.0",
+          "workload": "code"
+        },
+        "profile": "balanced",
+        "reason": "act 阶段；code 原始难度 5.1/10，选模分数 5.1/10，选择 gpt-6.1-sol medium",
+        "reasoning_effort": "medium",
+        "requested_phase": "act",
+        "requires_strong_review": false,
+        "selection_score": 5.1
+      },
+      "strategy": "router",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 5.1,
+          "task_type": "code"
+        },
+        "id": "routine_code",
+        "instruction": "Implement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Integer range union",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "circular_boundaries--router--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/circular_boundaries@1.0.0\n\nImplement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "a661e32f205b33d41b4ccf1da4168e4bfe5295fb4caa9f86ccf2ddb5dec15679",
+      "repetition": 1,
+      "route": {
+        "assessment": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "code"
+            ],
+            "constraints": [],
+            "scope": "unspecified"
+          },
+          "reasons": [
+            "task_type=code"
+          ],
+          "score": 5.1,
+          "source": "heuristic",
+          "task_type": "code"
+        },
+        "assessment_input": {
+          "complexity": "normal",
+          "risk": "low",
+          "task_type": "general",
+          "text": "Implement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution."
+        },
+        "difficulty": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "code"
+            ],
+            "constraints": [],
+            "scope": "unspecified"
+          },
+          "reasons": [
+            "task_type=code"
+          ],
+          "score": 5.1,
+          "source": "heuristic",
+          "task_type": "code"
+        },
+        "feedback_scope": "benchmark",
+        "history": {},
+        "model": "gpt-6.1-sol",
+        "phase": "act",
+        "policy": {
+          "calibration": "uncalibrated_prior_with_local_counts",
+          "candidates": [
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6.1-sol",
+              "prior_calibrated": false,
+              "rank_score": 100.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-sol",
+              "prior_calibrated": false,
+              "rank_score": 95.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 24,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-sol",
+              "prior_calibrated": false,
+              "rank_score": 89.5,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 60,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-astra",
+              "prior_calibrated": false,
+              "rank_score": 83.0,
+              "reasoning_effort": "xhigh",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 14,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-terra",
+              "prior_calibrated": false,
+              "rank_score": 79.9167,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            }
+          ],
+          "constraints": {},
+          "excluded": [],
+          "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+          "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+          "profile": "balanced",
+          "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+          "version": "1.0",
+          "workload": "code"
+        },
+        "profile": "balanced",
+        "reason": "act 阶段；code 原始难度 5.1/10，选模分数 5.1/10，选择 gpt-6.1-sol medium",
+        "reasoning_effort": "medium",
+        "requested_phase": "act",
+        "requires_strong_review": false,
+        "selection_score": 5.1
+      },
+      "strategy": "router",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "hard",
+          "score": 8.6,
+          "task_type": "reason"
+        },
+        "id": "circular_boundaries",
+        "instruction": "Implement owner(period,segments,t) in solution.py. period is an integer > 0; t is any integer; each segment is a dict with exactly id,start,end,priority. id is a unique nonempty string, priority an integer, and start/end integers in [0,period). bool is never an integer here. Invalid inputs raise ValueError. Normalize t modulo period. A segment covers clockwise [start,end); when start>end it wraps across zero; start=end covers the FULL cycle. Among covering segments choose greatest priority, then smallest clockwise length (full cycle length=period), then lexicographically smallest id. Return the winning id or None. Do not mutate input. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Circular interval boundary rules",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "structured_extract--fixed_mid--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/structured_extract@1.0.0\n\nFor each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: summary.json\n\nFixture invoices.jsonl:\n{\"id\":\"A\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"12.40\",\"currency\":\"USD\"}\n{\"id\":\"B\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":2,\"status\":\"paid\",\"customer\":\"Maple\",\"amount\":\"9.50\",\"currency\":\"USD\"}\n{\"id\":\"A\",\"revision\":2,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"10.10\",\"currency\":\"USD\"}\n{\"id\":\"D\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"2.20\",\"currency\":\"EUR\"}\n{\"id\":\"B\",\"revision\":3,\"status\":\"cancelled\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"0.90\",\"currency\":\"USD\"}\n{\"id\":\"F\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"1.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"8.00\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":2,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"1.20\",\"currency\":\"USD\"}\n",
+      "prompt_hash": "0577f5a2b7ee8c27b6670218cc70de9b245af3c8d3688c0478a9f0ea9e756489",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6.1-sol",
+        "reason": "fixed baseline",
+        "reasoning_effort": "high"
+      },
+      "strategy": "fixed_mid",
+      "task": {
+        "fixture_contents": {
+          "invoices.jsonl": "{\"id\":\"A\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"12.40\",\"currency\":\"USD\"}\n{\"id\":\"B\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":2,\"status\":\"paid\",\"customer\":\"Maple\",\"amount\":\"9.50\",\"currency\":\"USD\"}\n{\"id\":\"A\",\"revision\":2,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"10.10\",\"currency\":\"USD\"}\n{\"id\":\"D\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"2.20\",\"currency\":\"EUR\"}\n{\"id\":\"B\",\"revision\":3,\"status\":\"cancelled\",\"customer\":\"Pine\",\"amount\":\"3.05\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":1,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"0.90\",\"currency\":\"USD\"}\n{\"id\":\"F\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"1.05\",\"currency\":\"USD\"}\n{\"id\":\"C\",\"revision\":1,\"status\":\"open\",\"customer\":\"Maple\",\"amount\":\"8.00\",\"currency\":\"USD\"}\n{\"id\":\"E\",\"revision\":2,\"status\":\"open\",\"customer\":\"Pine\",\"amount\":\"1.20\",\"currency\":\"USD\"}\n"
+        },
+        "fixtures": [
+          "invoices.jsonl"
+        ],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 3.6,
+          "task_type": "extract"
+        },
+        "id": "structured_extract",
+        "instruction": "For each invoice id, use its greatest numeric revision regardless of input order. Retain only latest records with status open and currency USD. Return summary.json with exactly keys invoices and totals. invoices is an array of {id,customer,amount}, sorted ascending by id. totals is an array of {customer,amount}, sorted ascending by customer. Amounts are exact decimal sums formatted as strings with two fractional digits; no floating-point rounding.",
+        "outputs": [
+          "summary.json"
+        ],
+        "title": "Revision-aware invoice extraction",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "bug_fix--fixed_mid--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/bug_fix@1.0.0\n\nRepair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: cache.py\n\nFixture cache.py:\nclass Cache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.data = {}\n\n    def put(self, key, value, now, ttl):\n        if key not in self.data and len(self.data) >= self.capacity:\n            self.data.pop(next(iter(self.data)))\n        self.data[key] = (value, now + ttl)\n\n    def get(self, key, now):\n        value, expiry = self.data[key]\n        if now > expiry:\n            del self.data[key]\n            raise KeyError(key)\n        return value\n",
+      "prompt_hash": "cbe8b2a95d886efe1b48766d56cd48188e3c43213f6e0d12e1fb87b82e624b5a",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6.1-sol",
+        "reason": "fixed baseline",
+        "reasoning_effort": "high"
+      },
+      "strategy": "fixed_mid",
+      "task": {
+        "fixture_contents": {
+          "cache.py": "class Cache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.data = {}\n\n    def put(self, key, value, now, ttl):\n        if key not in self.data and len(self.data) >= self.capacity:\n            self.data.pop(next(iter(self.data)))\n        self.data[key] = (value, now + ttl)\n\n    def get(self, key, now):\n        value, expiry = self.data[key]\n        if now > expiry:\n            del self.data[key]\n            raise KeyError(key)\n        return value\n"
+        },
+        "fixtures": [
+          "cache.py"
+        ],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 6.4,
+          "task_type": "debug"
+        },
+        "id": "bug_fix",
+        "instruction": "Repair the supplied Cache class while preserving constructor, put(key,value,now,ttl), and get(key,now). capacity must be an integer > 0 (bool invalid), otherwise ValueError. Calls use nondecreasing finite numeric now and ttl >= 0; do not add validation for these. An item expires when now >= expiry. Before any put or get remove all expired entries. A successful get and every put make that key most recently used. When putting a new key at capacity, evict least recently used. Updating an existing key must not evict another. ttl=0 removes any existing value for that key and stores nothing. A missing/expired get raises KeyError. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "cache.py"
+        ],
+        "title": "Expiry-aware LRU repair",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "routine_code--fixed_mid--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/routine_code@1.0.0\n\nImplement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "a35295a73c1fde3d1323db141d06bc2dbafc060a280da71ed38fced4fceea8b6",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6.1-sol",
+        "reason": "fixed baseline",
+        "reasoning_effort": "high"
+      },
+      "strategy": "fixed_mid",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "normal",
+          "score": 5.1,
+          "task_type": "code"
+        },
+        "id": "routine_code",
+        "instruction": "Implement union_ranges(ranges) in solution.py for half-open integer intervals [start,end). Input is a list of two-element lists or tuples. Validate all inputs: endpoints must be integers (bool is invalid), start <= end, every element has exactly two endpoints; invalid input raises ValueError. Drop empty intervals. Return a new list of [start,end] sorted ascending, merging overlap AND adjacency. Do not mutate input. Empty input returns []. Use only Python 3.9 standard library; no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Integer range union",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "weighted_schedule--fixed_strong--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/weighted_schedule@1.0.0\n\nImplement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "f24ecccc110526b13c2cb2a17bfea4ea38f29861ed733652c1495a94ff0e8cf6",
+      "repetition": 1,
+      "route": {
+        "model": "gpt-6-astra",
+        "reason": "fixed baseline",
+        "reasoning_effort": "xhigh"
+      },
+      "strategy": "fixed_strong",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "hard",
+          "score": 7.8,
+          "task_type": "reason"
+        },
+        "id": "weighted_schedule",
+        "instruction": "Implement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Deterministic weighted scheduling",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "id": "weighted_schedule--router--01",
+      "prompt": "Solve this synthetic benchmark task in one attempt. Use only the provided specification and fixtures. Do not inspect parent directories, benchmark code, graders, or reference answers. Do not run commands or execute the generated code. Return final JSON only, matching the provided schema: {\"files\":[{\"path\":\"relative filename\",\"content\":\"complete UTF-8 file content\"}]}. Return exactly the required files. No Markdown fences or prose.\n\nTask version: router-mini-v1.0.0/weighted_schedule@1.0.0\n\nImplement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution.\n\nExecution constraints for Python outputs: imports are restricted to collections, bisect, functools, itertools, math, decimal, typing. Only constants, imports, function/class definitions and docstrings are allowed at top level. Do not use file/network/process access, print, eval/exec/compile, dynamic attribute access (getattr/setattr/etc.), introspection, or dunder attributes. These public restrictions are also checked by the grader.\n\nRequired outputs: solution.py",
+      "prompt_hash": "f24ecccc110526b13c2cb2a17bfea4ea38f29861ed733652c1495a94ff0e8cf6",
+      "repetition": 1,
+      "route": {
+        "assessment": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "code"
+            ],
+            "constraints": [],
+            "scope": "unspecified"
+          },
+          "reasons": [
+            "task_type=code"
+          ],
+          "score": 5.1,
+          "source": "heuristic",
+          "task_type": "code"
+        },
+        "assessment_input": {
+          "complexity": "normal",
+          "risk": "low",
+          "task_type": "general",
+          "text": "Implement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution."
+        },
+        "difficulty": {
+          "confidence": "medium",
+          "confidence_calibrated": false,
+          "features": {
+            "actions": [
+              "code"
+            ],
+            "constraints": [],
+            "scope": "unspecified"
+          },
+          "reasons": [
+            "task_type=code"
+          ],
+          "score": 5.1,
+          "source": "heuristic",
+          "task_type": "code"
+        },
+        "feedback_scope": "benchmark",
+        "history": {},
+        "model": "gpt-6.1-sol",
+        "phase": "act",
+        "policy": {
+          "calibration": "uncalibrated_prior_with_local_counts",
+          "candidates": [
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6.1-sol",
+              "prior_calibrated": false,
+              "rank_score": 100.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 12,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-sol",
+              "prior_calibrated": false,
+              "rank_score": 95.0,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 24,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-sol",
+              "prior_calibrated": false,
+              "rank_score": 89.5,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 60,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-6-astra",
+              "prior_calibrated": false,
+              "rank_score": 83.0,
+              "reasoning_effort": "xhigh",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            },
+            {
+              "cost_index": 14,
+              "history": {
+                "accepted": 0,
+                "min_samples": 5,
+                "rejected": 0,
+                "used": false
+              },
+              "latency_ms": null,
+              "model": "gpt-5.6-terra",
+              "prior_calibrated": false,
+              "rank_score": 79.9167,
+              "reasoning_effort": "medium",
+              "reasons": [
+                "legacy_order_uncalibrated",
+                "verified_price_comparison"
+              ]
+            }
+          ],
+          "constraints": {},
+          "excluded": [],
+          "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+          "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+          "profile": "balanced",
+          "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+          "version": "1.0",
+          "workload": "code"
+        },
+        "profile": "balanced",
+        "reason": "act 阶段；code 原始难度 5.1/10，选模分数 5.1/10，选择 gpt-6.1-sol medium",
+        "reasoning_effort": "medium",
+        "requested_phase": "act",
+        "requires_strong_review": false,
+        "selection_score": 5.1
+      },
+      "strategy": "router",
+      "task": {
+        "fixture_contents": {},
+        "fixtures": [],
+        "human_annotation": {
+          "complexity": "hard",
+          "score": 7.8,
+          "task_type": "reason"
+        },
+        "id": "weighted_schedule",
+        "instruction": "Implement select_jobs(jobs) in solution.py. Each job is a dict with exactly id,start,end,reward: id is a unique nonempty string; the three numbers are integers (bool invalid), and start < end. Invalid input raises ValueError. Jobs occupy [start,end); touching jobs are compatible. Return selected ids in chronological order (start,end,id), maximizing total reward. Among equal rewards choose fewer jobs; among those choose the lexicographically smallest id sequence in chronological order. Empty selection is allowed. Do not mutate input. Target O(n^2) or better for n up to 200; avoid enumerating all subsets. Use Python 3.9 standard library, no top-level execution.",
+        "outputs": [
+          "solution.py"
+        ],
+        "title": "Deterministic weighted scheduling",
+        "version": "1.0.0"
+      }
+    }
+  ],
+  "manifest_hash": "7189b64127eadc2c4e90f9ed2993efc44f0cc400782918baee409287ae67ea15",
+  "max_runs": 18,
+  "prices": {
+    "fetched_at": "2026-09-30T14:17:36Z",
+    "hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+    "models": [
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6-astra",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6-astra",
+        "name": "gpt-6-astra",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 25,
+            "input": 250,
+            "output": 1250
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 12.5,
+            "cached_input": 1,
+            "input": 10,
+            "output": 50
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": true,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "frontier",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6.1-sol",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6.1-sol",
+        "name": "gpt-6.1-sol",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 2.5,
+            "input": 50,
+            "output": 250
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 2.5,
+            "cached_input": 0.1,
+            "input": 2,
+            "output": 10
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6-sol",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6-sol",
+        "name": "gpt-6-sol",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 5,
+            "input": 50,
+            "output": 250
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 2.5,
+            "cached_input": 0.2,
+            "input": 2,
+            "output": 10
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6-luna",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6-luna",
+        "name": "gpt-6-luna",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 0.25,
+            "input": 2.5,
+            "output": 12.5
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 0.125,
+            "cached_input": 0.01,
+            "input": 0.1,
+            "output": 0.5
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "light",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-5.6-sol",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-5.6-sol",
+        "name": "gpt-5.6-sol",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 10,
+            "input": 100,
+            "output": 500
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 5,
+            "cached_input": 0.4,
+            "input": 4,
+            "output": 20
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-5.6-terra",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-5.6-terra",
+        "name": "gpt-5.6-terra",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 5,
+            "input": 50,
+            "output": 300
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 2.5,
+            "cached_input": 0.2,
+            "input": 2,
+            "output": 12
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-5.6-luna",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-5.6-luna",
+        "name": "gpt-5.6-luna",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 0.5,
+            "input": 5,
+            "output": 30
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 0.25,
+            "cached_input": 0.02,
+            "input": 0.2,
+            "output": 1.2
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "light",
+          "verified": false
+        },
+        "status": "verified"
+      }
+    ],
+    "schema": "adaptive-router.model-registry",
+    "schema_version": 1,
+    "source": {
+      "capability_source": "当前工具声明的模型与reasoning efforts；执行前仍需宿主实时交集",
+      "kind": "bundled",
+      "urls": [
+        "https://developers.openai.com/api/docs/pricing",
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://learn.chatgpt.com/docs/pricing#token-rates"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "version": "2026-09-30.1"
+  },
+  "prices_hash": "b7825fc81533c6ba2a41f692463a4b764b6e293183a6f72cad3cf0274bcaf422",
+  "registry_hash": "b7825fc81533c6ba2a41f692463a4b764b6e293183a6f72cad3cf0274bcaf422",
+  "registry_snapshot": {
+    "fetched_at": "2026-09-30T14:17:36Z",
+    "hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+    "models": [
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6-astra",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6-astra",
+        "name": "gpt-6-astra",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 25,
+            "input": 250,
+            "output": 1250
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 12.5,
+            "cached_input": 1,
+            "input": 10,
+            "output": 50
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": true,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "frontier",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6.1-sol",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6.1-sol",
+        "name": "gpt-6.1-sol",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 2.5,
+            "input": 50,
+            "output": 250
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 2.5,
+            "cached_input": 0.1,
+            "input": 2,
+            "output": 10
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6-sol",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6-sol",
+        "name": "gpt-6-sol",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 5,
+            "input": 50,
+            "output": 250
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 2.5,
+            "cached_input": 0.2,
+            "input": 2,
+            "output": 10
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-6-luna",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-6-luna",
+        "name": "gpt-6-luna",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 0.25,
+            "input": 2.5,
+            "output": 12.5
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 0.125,
+            "cached_input": 0.01,
+            "input": 0.1,
+            "output": 0.5
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "light",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-5.6-sol",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-5.6-sol",
+        "name": "gpt-5.6-sol",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 10,
+            "input": 100,
+            "output": 500
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 5,
+            "cached_input": 0.4,
+            "input": 4,
+            "output": 20
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-5.6-terra",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-5.6-terra",
+        "name": "gpt-5.6-terra",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 5,
+            "input": 50,
+            "output": 300
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 2.5,
+            "cached_input": 0.2,
+            "input": 2,
+            "output": 12
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "standard",
+          "verified": false
+        },
+        "status": "verified"
+      },
+      {
+        "capabilities": {
+          "context_window": null,
+          "efforts": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ],
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "reasoning": true,
+          "tools": true,
+          "verified": true
+        },
+        "endpoints": [
+          {
+            "id": "gpt-5.6-luna",
+            "kind": "native",
+            "provider": "codex",
+            "verified": true
+          }
+        ],
+        "id": "gpt-5.6-luna",
+        "name": "gpt-5.6-luna",
+        "pricing": {
+          "as_of": "2026-09-30",
+          "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+          "credits_per_million": {
+            "cached_input": 0.5,
+            "input": 5,
+            "output": 30
+          },
+          "source": [
+            "https://developers.openai.com/api/docs/pricing",
+            "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "https://learn.chatgpt.com/docs/pricing#token-rates"
+          ],
+          "usd_per_million": {
+            "cache_write_input": 0.25,
+            "cached_input": 0.02,
+            "input": 0.2,
+            "output": 1.2
+          },
+          "verified": true
+        },
+        "provider": "openai",
+        "routing": {
+          "latency_ms": null,
+          "latency_verified": false,
+          "safety_equivalent_verified": false,
+          "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+          "strengths": {},
+          "tier": "light",
+          "verified": false
+        },
+        "status": "verified"
+      }
+    ],
+    "schema": "adaptive-router.model-registry",
+    "schema_version": 1,
+    "source": {
+      "capability_source": "当前工具声明的模型与reasoning efforts；执行前仍需宿主实时交集",
+      "kind": "bundled",
+      "urls": [
+        "https://developers.openai.com/api/docs/pricing",
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://learn.chatgpt.com/docs/pricing#token-rates"
+      ],
+      "verified_at": "2026-09-30"
+    },
+    "version": "2026-09-30.1"
+  },
+  "repetitions": 1,
+  "router_source": "source-snapshot/scripts",
+  "schema": "adaptive-router.benchmark",
+  "schema_version": 1,
+  "seed": 20260930,
+  "simulation": false
+}

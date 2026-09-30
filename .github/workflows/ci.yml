@@ -1,0 +1,34 @@
+name: Tests and native build
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python tools/check_public.py
+      - run: python -m unittest discover -s router/tests -q
+      - run: python -m unittest discover -s float/tests -q
+      - run: python router/benchmarks/benchmark.py replay --run-dir router/benchmarks/results/pilot-public --output /tmp/pilot-regrade.json
+  macos:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 float/scripts/sync_router.py --source router
+      - run: git diff --exit-code -- float/backend float/data
+      - run: sh float/scripts/build.sh
+      - run: sh float/scripts/build.sh --demo
+      - run: codesign --verify --deep --strict 'float/build/Codex Float.app'

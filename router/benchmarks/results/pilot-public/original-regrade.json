@@ -1,0 +1,174 @@
+{
+  "code_drift": [],
+  "created_at": "2026-09-30T14:52:19.542924+00:00",
+  "grader_hash": "172e81158afefbdd69127515bd252747ca46b106c9de2d37eb448bda700526ff",
+  "manifest_hash": "7189b64127eadc2c4e90f9ed2993efc44f0cc400782918baee409287ae67ea15",
+  "model_requests": 0,
+  "original_grader_hash": "172e81158afefbdd69127515bd252747ca46b106c9de2d37eb448bda700526ff",
+  "original_results_modified": false,
+  "results": [
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "circular_boundaries--fixed_strong--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "exact_edit--fixed_mid--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "bug_fix--fixed_strong--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "structured_extract--fixed_strong--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "exact_edit--router--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "structured_extract--router--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "weighted_schedule--fixed_mid--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "bug_fix--router--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "exact_edit--fixed_strong--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "routine_code--fixed_strong--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "circular_boundaries--fixed_mid--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "routine_code--router--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "circular_boundaries--router--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "structured_extract--fixed_mid--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "bug_fix--fixed_mid--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "routine_code--fixed_mid--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "weighted_schedule--fixed_strong--01",
+      "replayed": true
+    },
+    {
+      "grade": {
+        "error": null,
+        "grader_version": "grader-v1.0.0",
+        "passed": true
+      },
+      "job_id": "weighted_schedule--router--01",
+      "replayed": true
+    }
+  ],
+  "simulation": false
+}

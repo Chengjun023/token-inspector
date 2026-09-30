@@ -1,0 +1,21 @@
+{
+  "files": {
+    "benchmarks/__init__.py": "cb3582a0cc797e0ff61d7e5a87b4ec36a274e59e97075c62a00900042a56fd3b",
+    "benchmarks/benchmark.py": "e355f060bbecb64733bfe490f001b661d0c4880e6aaac39c98a8e757dd225519",
+    "benchmarks/demo_answers.py": "24015048a27c871e2a45b5c01f467097a87c965b94d80186debf380b040db1c5",
+    "benchmarks/executors.py": "caf95bd20fe2f68bd93de48fc6a3cee76a7e51f01ca603eb7588779bce2845de",
+    "benchmarks/fixtures/v1/cache.py": "620e4b5b9af4b0cdfb02c0ffe420b40b63f3db42e02fbd24e4b04e6e634abb18",
+    "benchmarks/fixtures/v1/config.ini": "7b0e96b57fd27e7ca27332d2e5da1466332a2afd20ae8dd651bdc57f91338bff",
+    "benchmarks/fixtures/v1/invoices.jsonl": "86b546ff7296ca0d9230a6b2028a3b6ee638b0ca0fe778a2f7ba5a7815d609af",
+    "benchmarks/grader_worker.py": "1bc520afb20fb3f74a4741e5fe39b18875abd6243b3bc6e2bb4b303ad95b6c3c",
+    "benchmarks/graders.py": "172e81158afefbdd69127515bd252747ca46b106c9de2d37eb448bda700526ff",
+    "benchmarks/tasks.py": "1953ff4d7d4a5966c8742ab114b143e7ba7cb5d3776770916656fb787eaa07ff",
+    "data/models.bundled.json": "998a5f7167ddb71dba0a470b16b72dfaa0241c815b086566612553c873401211",
+    "scripts/difficulty.py": "e9e8d0fa66ac7c75981df8257514dda6380aa54e903d853aa9c6804ec3d1d8ee",
+    "scripts/feedback.py": "4f61845585f96155cd2933ce2a794e62b1ada62ad899757ddcac1c3b4ea7b90a",
+    "scripts/model_registry.py": "ccc4c1040f2aef0a29809228e3eb66959a2fa6b6bb8b40dd90e82622f58ea266",
+    "scripts/policy.py": "32178fd3c977e1b873b535bcb7c8086c959b65782a42584a43630719d254109d",
+    "scripts/router.py": "fab3e963ae99c48c7555d51c0643666ecdf6f68d886802501ec61e02b773cd76"
+  },
+  "manifest_hash": "7189b64127eadc2c4e90f9ed2993efc44f0cc400782918baee409287ae67ea15"
+}

@@ -1,0 +1,1 @@
+{"additionalProperties": false, "properties": {"files": {"items": {"additionalProperties": false, "properties": {"content": {"type": "string"}, "path": {"type": "string"}}, "required": ["path", "content"], "type": "object"}, "type": "array"}}, "required": ["files"], "type": "object"}

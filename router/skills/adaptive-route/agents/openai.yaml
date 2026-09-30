@@ -1,0 +1,4 @@
+interface:
+  display_name: "智能模型路由"
+  short_description: "按分析、执行与复核阶段选择模型，支持自动、预设和询问后超时路由"
+  default_prompt: "用 $adaptive-route 自动均衡路由完成这个任务：复杂分析用高档推理，明确的执行步骤用轻量模型。"

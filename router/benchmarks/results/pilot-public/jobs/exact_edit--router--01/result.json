@@ -1,0 +1,223 @@
+{
+  "artifact_hashes": {
+    "config.ini": "4762cbe34fd929075b76b62c4737bd2eac209900c1b87a5d60c79fb5301b9b27"
+  },
+  "completed_at": "2026-09-30T14:44:01.043567+00:00",
+  "cost": {
+    "known": true,
+    "price_snapshot_hash": "b7825fc81533c6ba2a41f692463a4b764b6e293183a6f72cad3cf0274bcaf422",
+    "reason": null,
+    "usd": "0.0016926"
+  },
+  "elapsed_seconds": 8.844713,
+  "error": null,
+  "event_types": [
+    "thread.started",
+    "turn.started",
+    "item.completed",
+    "turn.completed"
+  ],
+  "final_pass": true,
+  "first_pass": true,
+  "grade": {
+    "error": null,
+    "grader_version": "grader-v1.0.0",
+    "passed": true
+  },
+  "invalid_event_lines": 0,
+  "job_id": "exact_edit--router--01",
+  "manifest_hash": "7189b64127eadc2c4e90f9ed2993efc44f0cc400782918baee409287ae67ea15",
+  "route": {
+    "assessment": {
+      "confidence": "medium",
+      "confidence_calibrated": false,
+      "features": {
+        "actions": [
+          "edit"
+        ],
+        "constraints": [
+          "preserve_non_target_content"
+        ],
+        "scope": "local"
+      },
+      "reasons": [
+        "task_type=edit"
+      ],
+      "score": 3.5,
+      "source": "heuristic",
+      "task_type": "edit"
+    },
+    "assessment_input": {
+      "complexity": "normal",
+      "risk": "low",
+      "task_type": "general",
+      "text": "Return the complete config.ini after changing only the numeric value of retry_count in the [service] section from 3 to 5. Preserve every other byte, including comments, spacing, blank lines and final newline. The [archive] retry_count stays as supplied."
+    },
+    "difficulty": {
+      "confidence": "medium",
+      "confidence_calibrated": false,
+      "features": {
+        "actions": [
+          "edit"
+        ],
+        "constraints": [
+          "preserve_non_target_content"
+        ],
+        "scope": "local"
+      },
+      "reasons": [
+        "task_type=edit"
+      ],
+      "score": 3.5,
+      "source": "heuristic",
+      "task_type": "edit"
+    },
+    "feedback_scope": "benchmark",
+    "history": {},
+    "model": "gpt-6-luna",
+    "phase": "act",
+    "policy": {
+      "calibration": "uncalibrated_prior_with_local_counts",
+      "candidates": [
+        {
+          "cost_index": 0.6,
+          "history": {
+            "accepted": 0,
+            "min_samples": 5,
+            "rejected": 0,
+            "used": false
+          },
+          "latency_ms": null,
+          "model": "gpt-6-luna",
+          "prior_calibrated": false,
+          "rank_score": 100.0,
+          "reasoning_effort": "medium",
+          "reasons": [
+            "legacy_order_uncalibrated",
+            "verified_price_comparison"
+          ]
+        },
+        {
+          "cost_index": 14,
+          "history": {
+            "accepted": 0,
+            "min_samples": 5,
+            "rejected": 0,
+            "used": false
+          },
+          "latency_ms": null,
+          "model": "gpt-5.6-terra",
+          "prior_calibrated": false,
+          "rank_score": 94.5488,
+          "reasoning_effort": "medium",
+          "reasons": [
+            "legacy_order_uncalibrated",
+            "verified_price_comparison"
+          ]
+        },
+        {
+          "cost_index": 12,
+          "history": {
+            "accepted": 0,
+            "min_samples": 5,
+            "rejected": 0,
+            "used": false
+          },
+          "latency_ms": null,
+          "model": "gpt-6.1-sol",
+          "prior_calibrated": false,
+          "rank_score": 89.6162,
+          "reasoning_effort": "medium",
+          "reasons": [
+            "legacy_order_uncalibrated",
+            "verified_price_comparison"
+          ]
+        },
+        {
+          "cost_index": 12,
+          "history": {
+            "accepted": 0,
+            "min_samples": 5,
+            "rejected": 0,
+            "used": false
+          },
+          "latency_ms": null,
+          "model": "gpt-6-sol",
+          "prior_calibrated": false,
+          "rank_score": 84.6162,
+          "reasoning_effort": "medium",
+          "reasons": [
+            "legacy_order_uncalibrated",
+            "verified_price_comparison"
+          ]
+        },
+        {
+          "cost_index": 24,
+          "history": {
+            "accepted": 0,
+            "min_samples": 5,
+            "rejected": 0,
+            "used": false
+          },
+          "latency_ms": null,
+          "model": "gpt-5.6-sol",
+          "prior_calibrated": false,
+          "rank_score": 79.2121,
+          "reasoning_effort": "medium",
+          "reasons": [
+            "legacy_order_uncalibrated",
+            "verified_price_comparison"
+          ]
+        },
+        {
+          "cost_index": 60,
+          "history": {
+            "accepted": 0,
+            "min_samples": 5,
+            "rejected": 0,
+            "used": false
+          },
+          "latency_ms": null,
+          "model": "gpt-6-astra",
+          "prior_calibrated": false,
+          "rank_score": 73.0,
+          "reasoning_effort": "xhigh",
+          "reasons": [
+            "legacy_order_uncalibrated",
+            "verified_price_comparison"
+          ]
+        }
+      ],
+      "constraints": {},
+      "excluded": [],
+      "history_hash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "host_hash": "sha256:859106e14b7c8b9e3ecc68fd09eef4f6dc119c7ea7746f86e4c3eaafccc2f32f",
+      "price_basis": "input_plus_output_USD_per_million_comparison; no task cost forecast",
+      "profile": "balanced",
+      "registry_hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+      "version": "1.0",
+      "workload": "write"
+    },
+    "profile": "balanced",
+    "reason": "act 阶段；edit 原始难度 3.5/10，选模分数 3.5/10，选择 gpt-6-luna medium",
+    "reasoning_effort": "medium",
+    "requested_phase": "act",
+    "requires_strong_review": false,
+    "selection_score": 3.5
+  },
+  "simulation": false,
+  "status": "completed",
+  "strategy": "router",
+  "task_id": "exact_edit",
+  "unexpected_tool_types": [],
+  "usage": {
+    "cached_input_tokens": 0,
+    "completion_count": 1,
+    "input_includes_cached": true,
+    "input_tokens": 16441,
+    "known": true,
+    "output_includes_reasoning": true,
+    "output_tokens": 97,
+    "reasoning_tokens": 22
+  }
+}

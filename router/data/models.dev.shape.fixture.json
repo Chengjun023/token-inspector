@@ -1,0 +1,19 @@
+{
+  "synthetic-provider": {
+    "models": {
+      "valid-tiered": {
+        "name": "Synthetic tiered model",
+        "tool_call": true,
+        "cost": {
+          "input": 2,
+          "output": 6,
+          "tiers": [{"input": 4, "output": 10, "cache_read": 1, "tier": {"type": "context", "size": 200000}}]
+        },
+        "limit": {"context": 256000}
+      },
+      "negative-sentinel": {"name": "Synthetic unknown sentinel", "cost": {"input": -1, "output": -1}},
+      "invalid-name": {"name": "", "cost": {"input": 1, "output": 2}},
+      "unknown-price": {"name": "Synthetic no price", "cost": {}, "limit": {"context": 128000}}
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "adaptive-router",
+  "version": "0.3.0",
+  "description": "可更新模型目录、个性化本地路由、验收反馈与可复现benchmark。",
+  "author": {
+    "name": "Chengjun"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "智能模型路由",
+    "shortDescription": "模型目录、偏好、验收与可复现选模",
+    "longDescription": "按任务难度与已验证能力选择模型和推理档位；公开目录自动按TTL刷新，新增模型通过本地准入与宿主能力检查。两问偏好、显式验收反馈、冻结快照benchmark与Float数字计量；日常评分和排序无需额外模型请求。",
+    "developerName": "Chengjun",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "用 $adaptive-route 自动均衡路由完成这个任务。",
+      "路由改为先询问，60 秒未回复采用推荐。",
+      "设置思考 Astra max，执行 Terra medium。"
+    ],
+    "brandColor": "#2563EB"
+  },
+  "keywords": [
+    "routing",
+    "models",
+    "reasoning",
+    "token-budget"
+  ]
+}

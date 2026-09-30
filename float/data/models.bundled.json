@@ -1,0 +1,465 @@
+{
+  "fetched_at": "2026-09-30T14:17:36Z",
+  "hash": "sha256:92e00da19e98ee6c52309d5f540014900ba3742f53c9b5c4ed91a19d8a52ae54",
+  "models": [
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-6-astra",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-6-astra",
+      "name": "gpt-6-astra",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 25,
+          "input": 250,
+          "output": 1250
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 12.5,
+          "cached_input": 1,
+          "input": 10,
+          "output": 50
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": true,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "frontier",
+        "verified": false
+      },
+      "status": "verified"
+    },
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-6.1-sol",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-6.1-sol",
+      "name": "gpt-6.1-sol",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 2.5,
+          "input": 50,
+          "output": 250
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 2.5,
+          "cached_input": 0.1,
+          "input": 2,
+          "output": 10
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": false,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "standard",
+        "verified": false
+      },
+      "status": "verified"
+    },
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-6-sol",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-6-sol",
+      "name": "gpt-6-sol",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 5,
+          "input": 50,
+          "output": 250
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 2.5,
+          "cached_input": 0.2,
+          "input": 2,
+          "output": 10
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": false,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "standard",
+        "verified": false
+      },
+      "status": "verified"
+    },
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-6-luna",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-6-luna",
+      "name": "gpt-6-luna",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 0.25,
+          "input": 2.5,
+          "output": 12.5
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 0.125,
+          "cached_input": 0.01,
+          "input": 0.1,
+          "output": 0.5
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": false,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "light",
+        "verified": false
+      },
+      "status": "verified"
+    },
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-5.6-sol",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-5.6-sol",
+      "name": "gpt-5.6-sol",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 10,
+          "input": 100,
+          "output": 500
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 5,
+          "cached_input": 0.4,
+          "input": 4,
+          "output": 20
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": false,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "standard",
+        "verified": false
+      },
+      "status": "verified"
+    },
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max",
+          "ultra"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-5.6-terra",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-5.6-terra",
+      "name": "gpt-5.6-terra",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 5,
+          "input": 50,
+          "output": 300
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 2.5,
+          "cached_input": 0.2,
+          "input": 2,
+          "output": 12
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": false,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "standard",
+        "verified": false
+      },
+      "status": "verified"
+    },
+    {
+      "capabilities": {
+        "context_window": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "reasoning": true,
+        "tools": true,
+        "verified": true
+      },
+      "endpoints": [
+        {
+          "id": "gpt-5.6-luna",
+          "kind": "native",
+          "provider": "codex",
+          "verified": true
+        }
+      ],
+      "id": "gpt-5.6-luna",
+      "name": "gpt-5.6-luna",
+      "pricing": {
+        "as_of": "2026-09-30",
+        "basis": "API Standard短上下文参考价；credits为Codex Standard参考费率。非订阅账单；速度、长上下文及工具差价未计。",
+        "credits_per_million": {
+          "cached_input": 0.5,
+          "input": 5,
+          "output": 30
+        },
+        "source": [
+          "https://developers.openai.com/api/docs/pricing",
+          "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+          "https://learn.chatgpt.com/docs/pricing#token-rates"
+        ],
+        "usd_per_million": {
+          "cache_write_input": 0.25,
+          "cached_input": 0.02,
+          "input": 0.2,
+          "output": 1.2
+        },
+        "verified": true
+      },
+      "provider": "openai",
+      "routing": {
+        "latency_ms": null,
+        "latency_verified": false,
+        "safety_equivalent_verified": false,
+        "source": "legacy-router-heuristic；Astra为现有安全门禁锚点，尚未实测跨模型等价",
+        "strengths": {},
+        "tier": "light",
+        "verified": false
+      },
+      "status": "verified"
+    }
+  ],
+  "schema": "adaptive-router.model-registry",
+  "schema_version": 1,
+  "source": {
+    "capability_source": "当前工具声明的模型与reasoning efforts；执行前仍需宿主实时交集",
+    "kind": "bundled",
+    "urls": [
+      "https://developers.openai.com/api/docs/pricing",
+      "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "https://learn.chatgpt.com/docs/pricing#token-rates"
+    ],
+    "verified_at": "2026-09-30"
+  },
+  "version": "2026-09-30.1"
+}

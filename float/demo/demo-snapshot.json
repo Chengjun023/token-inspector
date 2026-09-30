@@ -1,0 +1,278 @@
+{
+  "connected": true,
+  "updatedAt": 1790782800,
+  "agents": [
+    {
+      "id": "demo-root-1",
+      "parent": "",
+      "title": "论文实验：把证据读懂，再把设计想透",
+      "nickname": "",
+      "model": "gpt-6-astra",
+      "effort": "xhigh",
+      "status": "running",
+      "activity": "subAgentActivity",
+      "tool": "",
+      "cwd": "/demo/projects/paper-lab",
+      "tokens": 28460,
+      "updatedAt": 1790782800,
+      "startedAt": 1790782620,
+      "source": "Synthetic demo fixture",
+      "difficulty": {
+        "score": 8.2,
+        "source": "heuristic",
+        "confidence": "medium",
+        "task_type": "code",
+        "reasons": [
+          "demo"
+        ]
+      },
+      "routeModel": "gpt-6-astra",
+      "routeEffort": "xhigh",
+      "routeStatus": "selected",
+      "routeReason": "按任务类型、风险与本地难度选择；Demo 合成数据",
+      "routeDecisionID": "demo-decision",
+      "routeProfile": "balanced",
+      "routeOutcome": null,
+      "usage": {
+        "inputTokens": 21345,
+        "cachedInputTokens": 0,
+        "outputTokens": 7115,
+        "reasoningTokens": 3415,
+        "totalTokens": 28460,
+        "pricedTokens": 28460,
+        "requests": 3,
+        "costUSD": 0.16,
+        "baselineUSD": 0.52,
+        "savingUSD": 0.36,
+        "coverage": "full",
+        "source": "synthetic_demo",
+        "priceBasis": "API Standard reference · Demo",
+        "priceDate": "2026-09-30",
+        "persistent": false,
+        "currentTurn": {
+          "turnId": "demo-turn",
+          "totalTokens": 28460,
+          "requests": 3,
+          "costUSD": 0.16,
+          "partial": false
+        }
+      },
+      "savings": {
+        "equivalentTokens": 22800,
+        "percent": 69.2,
+        "savedUSD": 0.36,
+        "pricedTokens": 28460,
+        "totalTokens": 28460,
+        "taskCount": 1,
+        "missingTaskCount": 0,
+        "includesChildren": false,
+        "partial": false
+      }
+    },
+    {
+      "id": "demo-read",
+      "parent": "demo-root-1",
+      "title": "阅读与记录",
+      "nickname": "阅读与记录",
+      "model": "gpt-5.6-terra",
+      "effort": "medium",
+      "status": "completed",
+      "activity": "reasoning",
+      "tool": "",
+      "cwd": "/demo/projects/paper-lab",
+      "tokens": 12800,
+      "updatedAt": 1790782800,
+      "startedAt": 1790782620,
+      "source": "Synthetic demo fixture",
+      "difficulty": {
+        "score": 3.0,
+        "source": "heuristic",
+        "confidence": "medium",
+        "task_type": "read",
+        "reasons": [
+          "demo"
+        ]
+      },
+      "routeModel": "gpt-5.6-terra",
+      "routeEffort": "medium",
+      "routeStatus": "selected",
+      "routeReason": "按任务类型、风险与本地难度选择；Demo 合成数据",
+      "routeDecisionID": "demo-decision",
+      "routeProfile": "balanced",
+      "routeOutcome": "accepted",
+      "usage": {
+        "inputTokens": 9600,
+        "cachedInputTokens": 0,
+        "outputTokens": 3200,
+        "reasoningTokens": 1536,
+        "totalTokens": 12800,
+        "pricedTokens": 12800,
+        "requests": 3,
+        "costUSD": 0.018,
+        "baselineUSD": 0.098,
+        "savingUSD": 0.08,
+        "coverage": "full",
+        "source": "synthetic_demo",
+        "priceBasis": "API Standard reference · Demo",
+        "priceDate": "2026-09-30",
+        "persistent": false,
+        "currentTurn": {
+          "turnId": "demo-turn",
+          "totalTokens": 12800,
+          "requests": 3,
+          "costUSD": 0.018,
+          "partial": false
+        }
+      },
+      "savings": {
+        "equivalentTokens": 8400,
+        "percent": 81.6,
+        "savedUSD": 0.08,
+        "pricedTokens": 12800,
+        "totalTokens": 12800,
+        "taskCount": 1,
+        "missingTaskCount": 0,
+        "includesChildren": false,
+        "partial": false
+      }
+    },
+    {
+      "id": "demo-code",
+      "parent": "demo-root-1",
+      "title": "实现与验收",
+      "nickname": "实现与验收",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "status": "running",
+      "activity": "reasoning",
+      "tool": "",
+      "cwd": "/demo/projects/paper-lab",
+      "tokens": 18600,
+      "updatedAt": 1790782800,
+      "startedAt": 1790782620,
+      "source": "Synthetic demo fixture",
+      "difficulty": {
+        "score": 6.4,
+        "source": "heuristic",
+        "confidence": "medium",
+        "task_type": "code",
+        "reasons": [
+          "demo"
+        ]
+      },
+      "routeModel": "gpt-6.1-sol",
+      "routeEffort": "high",
+      "routeStatus": "selected",
+      "routeReason": "按任务类型、风险与本地难度选择；Demo 合成数据",
+      "routeDecisionID": "demo-decision",
+      "routeProfile": "balanced",
+      "routeOutcome": null,
+      "usage": {
+        "inputTokens": 13950,
+        "cachedInputTokens": 0,
+        "outputTokens": 4650,
+        "reasoningTokens": 2232,
+        "totalTokens": 18600,
+        "pricedTokens": 18600,
+        "requests": 3,
+        "costUSD": 0.018,
+        "baselineUSD": 0.098,
+        "savingUSD": 0.08,
+        "coverage": "full",
+        "source": "synthetic_demo",
+        "priceBasis": "API Standard reference · Demo",
+        "priceDate": "2026-09-30",
+        "persistent": false,
+        "currentTurn": {
+          "turnId": "demo-turn",
+          "totalTokens": 18600,
+          "requests": 3,
+          "costUSD": 0.018,
+          "partial": false
+        }
+      },
+      "savings": {
+        "equivalentTokens": 15200,
+        "percent": 81.6,
+        "savedUSD": 0.08,
+        "pricedTokens": 18600,
+        "totalTokens": 18600,
+        "taskCount": 1,
+        "missingTaskCount": 0,
+        "includesChildren": false,
+        "partial": false
+      }
+    },
+    {
+      "id": "demo-root-2",
+      "parent": "",
+      "title": "把 24 条记录整理成一份清晰的 JSON",
+      "nickname": "",
+      "model": "gpt-6-luna",
+      "effort": "medium",
+      "status": "completed",
+      "activity": "subAgentActivity",
+      "tool": "",
+      "cwd": "/demo/projects/paper-lab",
+      "tokens": 4200,
+      "updatedAt": 1790782800,
+      "startedAt": 1790782620,
+      "source": "Synthetic demo fixture",
+      "difficulty": {
+        "score": 2.4,
+        "source": "heuristic",
+        "confidence": "medium",
+        "task_type": "code",
+        "reasons": [
+          "demo"
+        ]
+      },
+      "routeModel": "gpt-6-luna",
+      "routeEffort": "medium",
+      "routeStatus": "selected",
+      "routeReason": "按任务类型、风险与本地难度选择；Demo 合成数据",
+      "routeDecisionID": "demo-decision",
+      "routeProfile": "balanced",
+      "routeOutcome": "accepted",
+      "usage": {
+        "inputTokens": 3150,
+        "cachedInputTokens": 0,
+        "outputTokens": 1050,
+        "reasoningTokens": 504,
+        "totalTokens": 4200,
+        "pricedTokens": 4200,
+        "requests": 3,
+        "costUSD": 0.0028,
+        "baselineUSD": 0.026,
+        "savingUSD": 0.0232,
+        "coverage": "full",
+        "source": "synthetic_demo",
+        "priceBasis": "API Standard reference · Demo",
+        "priceDate": "2026-09-30",
+        "persistent": false,
+        "currentTurn": {
+          "turnId": "demo-turn",
+          "totalTokens": 4200,
+          "requests": 3,
+          "costUSD": 0.0028,
+          "partial": false
+        }
+      },
+      "savings": {
+        "equivalentTokens": 3500,
+        "percent": 89.2,
+        "savedUSD": 0.0232,
+        "pricedTokens": 4200,
+        "totalTokens": 4200,
+        "taskCount": 1,
+        "missingTaskCount": 0,
+        "includesChildren": false,
+        "partial": false
+      }
+    }
+  ],
+  "message": "DEMO · 全部任务与用量均为合成数据",
+  "warnings": [
+    "DEMO：合成任务与用量；等价节省 ≠ 实际减少 tokens"
+  ]
+}

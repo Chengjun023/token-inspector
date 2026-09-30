@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "source": "adaptive-router",
+  "files": {
+    "backend/difficulty.py": "e9e8d0fa66ac7c75981df8257514dda6380aa54e903d853aa9c6804ec3d1d8ee",
+    "backend/model_registry.py": "ccc4c1040f2aef0a29809228e3eb66959a2fa6b6bb8b40dd90e82622f58ea266",
+    "data/models.bundled.json": "998a5f7167ddb71dba0a470b16b72dfaa0241c815b086566612553c873401211"
+  }
+}

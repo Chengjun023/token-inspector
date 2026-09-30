@@ -1,0 +1,10 @@
+{"id":"A","revision":1,"status":"open","customer":"Maple","amount":"12.40","currency":"USD"}
+{"id":"B","revision":1,"status":"open","customer":"Pine","amount":"3.05","currency":"USD"}
+{"id":"C","revision":2,"status":"paid","customer":"Maple","amount":"9.50","currency":"USD"}
+{"id":"A","revision":2,"status":"open","customer":"Maple","amount":"10.10","currency":"USD"}
+{"id":"D","revision":1,"status":"open","customer":"Pine","amount":"2.20","currency":"EUR"}
+{"id":"B","revision":3,"status":"cancelled","customer":"Pine","amount":"3.05","currency":"USD"}
+{"id":"E","revision":1,"status":"open","customer":"Pine","amount":"0.90","currency":"USD"}
+{"id":"F","revision":1,"status":"open","customer":"Maple","amount":"1.05","currency":"USD"}
+{"id":"C","revision":1,"status":"open","customer":"Maple","amount":"8.00","currency":"USD"}
+{"id":"E","revision":2,"status":"open","customer":"Pine","amount":"1.20","currency":"USD"}

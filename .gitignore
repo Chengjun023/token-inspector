@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.sqlite*
+*.db
+*.log
+*.app/
+float/build/
+router/benchmarks/results/*
+!router/benchmarks/results/pilot-public/
+.codex/
+.venv/
