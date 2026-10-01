@@ -1,6 +1,6 @@
-# Architecture
+# Agent Smith architecture
 
-Token Inspector separates selection, execution evidence, observation, and accounting. The router owns decisions; Codex executes authorized work; Float observes local records and owns its numeric ledger.
+Agent Smith separates selection, execution evidence, observation, and accounting. The router owns decisions; Codex executes authorized work; Float observes local records and owns its numeric ledger.
 
 ```mermaid
 flowchart TD

@@ -1,6 +1,6 @@
-# Adaptive Router · 智能模型路由
+# Agent Smith · Adaptive Router · 智能模型路由
 
-Last updated: `2026-09-30T22:54:56+08:00`
+Last updated: `2026-10-01T13:48:10+08:00`
 
 个人 Codex 插件：把分析、执行与复核分配给不同模型，支持自动、询问超时和固定预设。默认 **自动＋均衡**。
 
@@ -114,7 +114,7 @@ python3 router/scripts/live.py probe
 
 ```sh
 codex plugin marketplace add .
-codex plugin add adaptive-router@token-inspector
+codex plugin add adaptive-router@agent-smith
 ```
 
-卸载：`codex plugin remove adaptive-router@token-inspector`。插件安装后在新任务显式调用 `$adaptive-route`；安装本身不会修改所有任务的模型。
+卸载：`codex plugin remove adaptive-router@agent-smith`。插件安装后在新任务显式调用 `$adaptive-route`；安装本身不会修改所有任务的模型。

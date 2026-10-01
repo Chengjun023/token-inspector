@@ -1,6 +1,6 @@
 # Contributing
 
-Small, inspectable changes are welcome. Token Inspector is maintained by Chengjun (`Chengjun023`), with Python standard-library backends and a native SwiftUI/AppKit window.
+Small, inspectable changes are welcome. Agent Smith (史密斯专员) is maintained by Chengjun (`Chengjun023`), with Python standard-library backends and a native SwiftUI/AppKit window.
 
 For a bug report, include the component, OS/Codex/Python version, a minimal synthetic reproduction, expected behavior, and observed behavior. Redact task titles, paths, IDs, credentials, and conversation content before sharing logs or screenshots. A fixture that reproduces the failure is usually more useful than a copy of a live Codex database.
 

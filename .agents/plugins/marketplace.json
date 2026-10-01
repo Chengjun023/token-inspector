@@ -1,7 +1,7 @@
 {
-  "name": "token-inspector",
+  "name": "agent-smith",
   "interface": {
-    "displayName": "Token Inspector"
+    "displayName": "Agent Smith"
   },
   "plugins": [
     {

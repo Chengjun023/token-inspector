@@ -1,14 +1,17 @@
-# Token Inspector
+# Agent Smith · 史密斯专员
 
-**Where did my tokens go? · 我的 token 去哪儿了？**
+**Token overspending? Better Call Smith.**<br>
+*The most expensive model need not appear in every court hearing.*
 
-[![CI](https://github.com/Chengjun023/token-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/Chengjun023/token-inspector/actions/workflows/ci.yml)
+[![CI](https://github.com/Chengjun023/agent-smith/actions/workflows/ci.yml/badge.svg)](https://github.com/Chengjun023/agent-smith/actions/workflows/ci.yml)
 
-![Token Inspector banner](assets/hero.svg)
+![A Better Call Saul parody ad with a ChatGPT knot-logo head pasted onto a lawyer in a suit](assets/agent-smith-ad.jpg)
 
 [完整中文说明](README.zh-CN.md) · [Architecture](docs/architecture.md) · [Engineering notes](docs/engineering.md) · [Roadmap](docs/roadmap.md)
 
-An independent Codex companion by Chengjun: choose a model for a bounded piece of work, then watch the tokens follow it. A little less guesswork. A much better paper trail.
+Still calling your most expensive model to fix a comma? Agent Smith takes the case.
+
+Built by Chengjun, Agent Smith pairs a local Codex model router with a native floating usage monitor and reproducible benchmarks. Routine work gets a lighter model; difficult cases bring in the heavy hitters. Every claim comes with receipts.
 
 Two components live here:
 
@@ -17,7 +20,7 @@ Two components live here:
 | [Adaptive Router](router/README.md) | 0.3.0 | Local model selection, preferences, evidence-backed acceptance, and reproducible benchmarks |
 | [Codex Float](float/README.md) | 0.5.0 | A native macOS floating window for local Codex tasks, agents, usage, and reference costs |
 
-This is a personal engineering project, independent of OpenAI.
+This is an independent personal project. The logo-head lawyer ad is an AI-generated Better Call Saul parody; [artwork and source credits](THIRD_PARTY_NOTICES.md).
 
 ## See the bill of materials
 
@@ -29,7 +32,7 @@ Float keeps the useful bits in view: blue reasoning effort, green/yellow/red dif
 
 The official Codex databases are opened read-only. Float writes its own numeric SQLite ledger, including thread/request IDs and read checkpoints, to deduplicate usage across restarts and log rotation. Conversation bodies and reasoning text stay out of that ledger. Missing usage or prices stay unknown; each metered request keeps its original price snapshot.
 
-## A router with receipts
+## Objection: the router has receipts
 
 Difficulty is a local, uncalibrated 1.0–10.0 heuristic in 0.1 steps. Scoring, metering, and price comparisons add no model calls. Two optional preference questions cover your priority—quality, balance, cost, or speed—and your usual work.
 
@@ -37,7 +40,7 @@ The router can discover new entries from models.dev on a TTL, keep a last-good s
 
 An enabled task routes independent work blocks through native subagents. A skill cannot switch the main task's model halfway through its generation. Dispatch and acceptance are separate: `accepted`, `rejected`, and `unknown` have explicit evidence semantics. Benchmark feedback stays outside production learning.
 
-## First pilot: small, inspectable, useful
+## The pilot: small enough to cross-examine
 
 Six public synthetic tasks × three strategies × one attempt: **18/18 passed** the deterministic graders.
 
@@ -63,7 +66,7 @@ From the cloned repository root, register the local marketplace and install the 
 
 ```sh
 codex plugin marketplace add .
-codex plugin add adaptive-router@token-inspector
+codex plugin add adaptive-router@agent-smith
 ```
 
 Inspect the router without invoking a model:
@@ -91,15 +94,15 @@ open "build/Codex Float.app"
 
 The build uses an ad-hoc signature. Distribution is source-first; there is no prebuilt DMG.
 
-For the screenshot's synthetic demo, run `sh scripts/build.sh --demo` from `float/` and open `build/Token Inspector Demo.app`. Its separate app identity and fixtures keep the demo away from live task readers.
+For the screenshot's synthetic demo, run `sh scripts/build.sh --demo` from `float/` and open the legacy-named `build/Token Inspector Demo.app`. Its existing separate app identity and fixtures keep demo preferences stable and the demo away from live task readers.
 
 From the repository root, run the regression suites or an offline benchmark demonstration:
 
 ```sh
 python3 -m unittest discover -s router/tests -q
 python3 -m unittest discover -s float/tests -q
-python3 router/benchmarks/benchmark.py demo --run-dir /tmp/token-inspector-demo
-python3 router/benchmarks/benchmark.py report --run-dir /tmp/token-inspector-demo --output /tmp/token-inspector-demo-report
+python3 router/benchmarks/benchmark.py demo --run-dir /tmp/agent-smith-demo
+python3 router/benchmarks/benchmark.py report --run-dir /tmp/agent-smith-demo --output /tmp/agent-smith-demo-report
 ```
 
 Use fresh output directories. `demo` uses synthetic answers and usage; `replay` regrades recorded artifacts. Neither calls a model. The imported baseline has **130 router tests and 50 Float tests**; current commands are the source of truth as coverage evolves.

@@ -1,12 +1,17 @@
-# Token 督察 · Token Inspector
+# Agent Smith · 史密斯专员
 
-**我的 token 去哪儿了？**
+**Token 超支？快给史密斯打电话！**<br>
+*最贵的模型，不必每次都出庭。*
 
-![Token Inspector 横幅](assets/hero.svg)
+![Better Call Saul 风格的恶搞广告：GPT 花形标志剪贴到西装律师头上](assets/agent-smith-ad.jpg)
 
 [English](README.md) · [架构](docs/architecture.md) · [工程说明](docs/engineering.md) · [路线图](docs/roadmap.md)
 
-这是 Chengjun 做的个人 Codex 配套工具：给一块明确的工作选模型，再看 token 花在了哪里。少一点猜测，多一份可核对的记录。
+还在让最贵的模型帮你改标点？史密斯专员受理此案。
+
+Agent Smith 是 Chengjun 做的 Codex 配套工具：按工作块选择模型，用原生悬浮窗盯住用量，再通过可复现 benchmark 核对结果。简单活儿交给轻量模型，难题请强模型出庭。
+
+**你的 token 有权保持沉默。每一笔用量，都得交代去向。**
 
 仓库包含两个组件：
 
@@ -15,7 +20,7 @@
 | [Adaptive Router](router/README.md) | 0.3.0 | 本地选模、个人偏好、有证据的验收与可复现评测 |
 | [Codex Float](float/README.md) | 0.5.0 | 原生 macOS 悬浮窗，展示本机 Codex 任务、子代理、用量与参考费用 |
 
-这是独立个人项目，与 OpenAI 无官方隶属关系。
+这是独立个人项目。Logo 头律师广告由 AI 生成，采用 Better Call Saul 广告的恶搞风格；[配图与资料来源](THIRD_PARTY_NOTICES.md)。
 
 ## 用量看得见，来源查得到
 
@@ -27,7 +32,7 @@
 
 官方 Codex 数据库以只读方式打开。Float 只写自己的数字 SQLite 账本，包含线程／请求标识和读取位置，用于跨重启、日志轮换的持久去重；账本不保存对话正文或推理正文。未知用量、未知价格保持未知，每个已计量请求冻结首次采用的价格快照。
 
-## 选模型，也留验收记录
+## 异议：路由决定有据可查
 
 难度是本地规则给出的 1.0–10.0 刻度，步长 0.1，尚未校准。评分、计量、比价都不新增模型调用。两道可选偏好问题分别询问优先目标——质量、均衡、费用或速度——以及主要工作类型。
 
@@ -35,7 +40,7 @@
 
 任务启用路由后，通过原生子代理派发可独立验收的工作块。主任务不能因技能调用而在生成途中换模。派发与验收分开记录：`accepted`、`rejected`、`unknown` 有明确证据语义，benchmark 反馈与生产学习隔离。
 
-## 第一轮 pilot：规模小，结果能拆开看
+## 第一轮 pilot：规模小，经得起逐项盘问
 
 六个公开合成任务 × 三种策略 × 每种一次：确定性验收 **18/18 通过**。
 
@@ -61,7 +66,7 @@ Python 部分只依赖标准库，router 执行复用已有 Codex 登录。Float
 
 ```sh
 codex plugin marketplace add .
-codex plugin add adaptive-router@token-inspector
+codex plugin add adaptive-router@agent-smith
 ```
 
 以下命令检查 router，不调用模型：
@@ -89,15 +94,15 @@ open "build/Codex Float.app"
 
 构建产物采用 ad-hoc 签名，当前通过源码分发，没有预构建 DMG。
 
-复现截图的合成演示时，在 `float/` 执行 `sh scripts/build.sh --demo`，打开 `build/Token Inspector Demo.app`。演示采用独立应用标识与 fixture，不启用真实任务读取器。
+复现截图的合成演示时，在 `float/` 执行 `sh scripts/build.sh --demo`，打开沿用旧名的 `build/Token Inspector Demo.app`。现有独立应用身份保留演示偏好；演示采用合成 fixture，不启用真实任务读取器。
 
 在仓库根目录运行回归或离线评测演示：
 
 ```sh
 python3 -m unittest discover -s router/tests -q
 python3 -m unittest discover -s float/tests -q
-python3 router/benchmarks/benchmark.py demo --run-dir /tmp/token-inspector-demo
-python3 router/benchmarks/benchmark.py report --run-dir /tmp/token-inspector-demo --output /tmp/token-inspector-demo-report
+python3 router/benchmarks/benchmark.py demo --run-dir /tmp/agent-smith-demo
+python3 router/benchmarks/benchmark.py report --run-dir /tmp/agent-smith-demo --output /tmp/agent-smith-demo-report
 ```
 
 输出使用新目录。`demo` 使用合成答案与用量，`replay` 重验收已有成果，两者都不调用模型。导入基线包含 **130 项 router 测试、50 项 Float 测试**，后续覆盖以实际命令结果为准。
